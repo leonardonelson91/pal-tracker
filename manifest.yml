@@ -5,4 +5,4 @@ applications:
   routes:
   - route: leos-tracker123.apps.pikes.pal.pivotal.io
   env:
-    WELCOME_MESSAGE: Hello from the review environment.
+    WELCOME_MESSAGE: Hello from the review environment
