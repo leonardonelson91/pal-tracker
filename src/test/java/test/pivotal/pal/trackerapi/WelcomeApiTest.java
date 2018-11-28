@@ -18,9 +18,13 @@ public class WelcomeApiTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    private static final String USER = "user";
+    private static final String PASSWORD = "password";
+
     @Test
     public void exampleTest() {
-        String body = this.restTemplate.getForObject("/", String.class);
+        String body = this.restTemplate.withBasicAuth(USER, PASSWORD)
+                .getForObject("/", String.class);
         assertThat(body).isEqualTo("Hello from test");
     }
 }

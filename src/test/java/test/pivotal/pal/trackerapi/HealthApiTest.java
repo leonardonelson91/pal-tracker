@@ -24,7 +24,8 @@ public class HealthApiTest {
 
     @Test
     public void healthTest() {
-        ResponseEntity<String> response = this.restTemplate.getForEntity("/health", String.class);
+        ResponseEntity<String> response = this.restTemplate.withBasicAuth("user", "password")
+                .getForEntity("/health", String.class);
 
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
